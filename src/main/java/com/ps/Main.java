@@ -34,10 +34,10 @@ public static void main (String [] args){
                 //viewBudgetStatus();
                 break;
             case 4:
-                //ledgerScreen();
+                ledgerScreen();
                 break;
             case 5:
-                //reportsScreen();
+                reportScreen();
                 break;
             case 6:
                 //setMonthlyBudget();
@@ -90,4 +90,48 @@ public static void ledgerScreen() {
 
     }while(subMenuCommand != 5);
 }
+
+public static void reportScreen(){
+    int menuCommand;
+    do{
+        System.out.println("Welcome to The reports screen");
+        System.out.println("Please choose what you would like to see");
+        System.out.println("1) Total income for Month");
+        System.out.println("2) Total expenses for Month");
+        System.out.println("3) Expenses by category");
+        System.out.println("4) Income and expenses summary");
+        System.out.println("5) Search by Date Range");
+        System.out.println("0) Back");
+        menuCommand = commandScanner.nextInt();
+
+        switch(menuCommand){
+            case 1:
+                //totalIncomeForMonth();
+                break;
+            case 2:
+                //totalExpensesForMonth();
+                break;
+            case 3:
+                //expensesByCategory();
+                break;
+            case 4:
+                //incomeAndExpensesSummary();
+                break;
+            case 5:
+                //searchByDateRange();
+                break;
+            case 0:
+                System.out.println("You choose to go back");
+            default:
+                System.out.println("Command not found please try again");
+
+
+
+        }
+
+
+    }while(menuCommand != 0);
+
+}
+
 }
