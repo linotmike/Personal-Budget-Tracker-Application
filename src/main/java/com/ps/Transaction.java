@@ -66,13 +66,13 @@ public class Transaction {
 
     @Override
     public String toString() {
-        return "Transaction{" +
+        return "{" +
                 "date=" + date +
-                ", time=" + time +
-                ", type='" + type + '\'' +
-                ", description='" + description + '\'' +
-                ", category='" + category + '\'' +
-                ", amount=" + amount +
+                ", \ntime=" + time +
+                ", \ntype='" + type + '\'' +
+                ", \ndescription='" + description + '\'' +
+                ", \ncategory='" + category + '\'' +
+                ", \namount=" + amount +
                 '}';
     }
 }
