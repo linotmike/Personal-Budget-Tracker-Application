@@ -52,4 +52,42 @@ public static void main (String [] args){
 
     }while(mainMenuCommand != 0);
 }
+
+
+public static void ledgerScreen() {
+    int subMenuCommand;
+
+    do{
+        System.out.println("Welcome to the ledger Screen");
+        System.out.println("1) All entries");
+        System.out.println("2) Income");
+        System.out.println("3) Expenses");
+        System.out.println("4) Reports");
+        System.out.println("5) Home");
+        subMenuCommand = commandScanner.nextInt();
+
+        switch(subMenuCommand){
+            case 1:
+                //allEntries();
+                break;
+            case 2:
+                //income();
+                break;
+            case 3:
+                //expenses();
+                break;
+            case 4:
+                //reportsScreen();
+                break;
+            case 5:
+                System.out.println("Going back to home Screen");
+                break;
+            default:
+                System.out.println("command not found");
+
+        }
+
+
+    }while(subMenuCommand != 5);
+}
 }
