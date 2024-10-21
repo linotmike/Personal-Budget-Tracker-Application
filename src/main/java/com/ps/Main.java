@@ -39,7 +39,7 @@ public class Main {
                     addIncome();
                     break;
                 case 2:
-                    //addExpense();
+                    addExpense();
                     break;
                 case 3:
                     //viewBudgetStatus();
@@ -151,19 +151,82 @@ public class Main {
         String description = inputScanner.nextLine();
         System.out.println("please enter the category");
         String category = inputScanner.nextLine();
-//        System.out.println("please enter the amount");
-//        inputScanner.nextLine();
         double amount;
         do {
             System.out.println("Please enter the amount");
+            while (!inputScanner.hasNextDouble()) {
+                System.out.println("Please input a valid number");
+                inputScanner.next();
+            }
             amount = inputScanner.nextDouble();
             if (amount <= 0) {
                 System.out.println("please enter a positive number");
             }
         } while (amount <= 0);
-    Transaction income = new Transaction(date,time,type,description,category,amount);
-    transactionArrayList.add(income);
-    System.out.println("Income successfully added!\nHere are the details: \n" + income);
+
+        inputScanner.nextLine();
+        Transaction income = new Transaction(date, time, type, description, category, amount);
+        transactionArrayList.add(income);
+        System.out.println("Income successfully added!\nHere are the details: \n" + income);
+    }
+
+    //    public static void addExpense() {
+//        System.out.println("please enter the type");
+//        String type = inputScanner.nextLine();
+//        System.out.print("Please enter the description");
+//        String description = inputScanner.nextLine();
+////        commandScanner.nextLine();
+//        System.out.println("Please enter the category");
+//        String category = inputScanner.nextLine();
+//        double amount;
+//        do {
+//            System.out.println("please enter the amount");
+//            while (!inputScanner.hasNextDouble()) {
+//                System.out.println("Please enter a valid number");
+//                inputScanner.next();
+//            }
+//            amount = inputScanner.nextDouble();
+//            if (amount <= 0) {
+//                System.out.println("Please enter a positive number");
+//            }
+//
+//        } while (amount <= 0);
+//        inputScanner.nextLine();
+//        Transaction expense = new Transaction(date, time, type, description, category, amount);
+//        transactionArrayList.add(expense);
+//
+//    }
+    public static void addExpense() {
+        System.out.println("Please enter the type");
+        String type = inputScanner.nextLine();
+
+        System.out.println("Please enter the description");
+        String description = inputScanner.nextLine();
+
+        System.out.println("Please enter the category");
+        String category = inputScanner.nextLine();
+
+        double amount;
+        do {
+            System.out.println("Please enter the amount");
+            while (!inputScanner.hasNextDouble()) {
+                System.out.println("Please enter a valid number");
+                inputScanner.next();
+            }
+            amount = inputScanner.nextDouble();
+            if (amount <= 0) {
+                System.out.println("Please enter a positive number");
+            }
+        } while (amount <= 0);
+
+        inputScanner.nextLine();
+
+        Transaction expense = new Transaction(date, time, type, description, category, -amount);
+        transactionArrayList.add(expense);
+//    System.out.println(expense);
+        System.out.println("Expense successfully added!\nHere are the details: \n" + expense);
+
+
     }
 
 
